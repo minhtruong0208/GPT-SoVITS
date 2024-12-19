@@ -397,5 +397,15 @@ arpa = {
 
 symbols = [pad] + c + v + ja_symbols + pu_symbols + list(arpa)
 symbols = sorted(set(symbols))
+
+# Import Vietnamese symbols
+from text.vietnamese import vietnamese_symbols
+
+# Add Vietnamese symbols to the main symbols list
+symbols += sorted(list(vietnamese_symbols))
+
+# Make sure all symbols are unique
+symbols = sorted(set(symbols))
+
 if __name__ == "__main__":
     print(len(symbols))
